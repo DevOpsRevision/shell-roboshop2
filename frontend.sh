@@ -5,8 +5,6 @@ APP_NAME="frontend"
 
 CHECK_ROOT
 
-
-
 dnf module disable nginx -y &>>$LOG_FILE
 VALIDATE $? "Disabling Nginx Module"
 
