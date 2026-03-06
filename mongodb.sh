@@ -2,6 +2,8 @@
 
 source ./common.sh
 
+APP_NAME="mongodb"
+
 CHECK_ROOT
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo
@@ -21,3 +23,4 @@ VALIDATE $? "Updating MongoDB Configuration"
 systemctl restart mongod &>>$LOG_FILE
 VALIDATE $? "Restarting MongoDB"
 
+PRINT_TIME
