@@ -23,9 +23,6 @@ VALIDATE $? "Enabling Redis Service"
 systemctl start redis &>>$LOG_FILE
 VALIDATE $? "Starting Redis Service"
 
-END_TIME=$(date +%s)
-ELAPSED_TIME=$(( $END_TIME - $START_TIME ))
-echo -e "$G INFO :: Redis setup completed in $ELAPSED_TIME seconds. $N" | tee -a $LOG_FILE
-
+PRINT_TIME
 
 
