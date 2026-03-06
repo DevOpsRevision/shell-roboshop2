@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./common.sh\
+source ./common.sh
 APP_NAME="rabbitmq"
 
 CHECK_ROOT
