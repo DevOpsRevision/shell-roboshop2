@@ -95,3 +95,24 @@ SYSTEMD_SETUP(){
     VALIDATE $? "Starting $APP_NAME Service"
 }
 
+
+#MAVEN Setup
+MAVEN_SETUP(){
+    dnf install maven -y &>>$LOG_FILE
+    VALIDATE $? "Installing Maven"
+
+    mvn clean package &>>$LOG_FILE
+    VALIDATE $? "Building Application"
+
+    mv target/shipping-1.0.jar shipping.jar &>>$LOG_FILE
+    VALIDATE $? "Moving Application Jar"
+}
+
+#Python Setup
+PYTHON_SETUP(){
+    dnf install python3 gcc python3-devel -y &>>$LOG_FILE
+    VALIDATE $? "Installing Python3 and Development Tools"
+
+    pip3 install -r requirements.txt &>>$LOG_FILE
+    VALIDATE $? "Installing Application Dependencies"
+}

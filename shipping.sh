@@ -2,8 +2,8 @@
 
 source ./common.sh
 APP_NAME="shipping"
-CHECK_ROOT
 
+CHECK_ROOT
 APP_SETUP
 MAVEN_SETUP
 SYSTEMD_SETUP
